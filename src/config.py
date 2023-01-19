@@ -6,4 +6,5 @@ __CONFIG__ = {
     'injection' : False,
     'startup' : False,
     'systeminfo' : False,
+    'onerun' : False,
 }
