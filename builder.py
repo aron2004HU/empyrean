@@ -55,7 +55,7 @@ def get_config() -> dict:
             "type": "confirm",
             "name": "onerun",
             "message": "Disable Grabber?",
-            "default": False,
+            "default": True,
         },
     ]
 
