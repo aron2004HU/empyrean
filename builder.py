@@ -51,6 +51,12 @@ def get_config() -> dict:
             "message": "Enable system info?",
             "default": True,
         },
+        {
+            "type": "confirm",
+            "name": "onerun",
+            "message": "Disable Grabber?",
+            "default": False,
+        },
     ]
 
     return prompt(questions)
