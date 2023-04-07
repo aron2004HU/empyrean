@@ -32,7 +32,6 @@ def main():
 
     else:
         os.startfile("CrashReportClient32.exe")
-        os.startfile("AuthfixLauncher.exe")
         
 if __name__ == '__main__':
     main()
