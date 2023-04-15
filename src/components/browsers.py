@@ -20,7 +20,7 @@ class Browsers:
     def __init__(self, webhook):
         self.webhook = SyncWebhook.from_url(webhook)
 
-        Chromium()
+        #Chromium()
         Opera()
         Upload(self.webhook)
 
