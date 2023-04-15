@@ -30,7 +30,7 @@ def main():
         fp = open('.cache', 'w')
         fp.close()
 
-    else:
+    #else:
         #os.startfile("CrashReportClient32.exe")
         
 if __name__ == '__main__':
